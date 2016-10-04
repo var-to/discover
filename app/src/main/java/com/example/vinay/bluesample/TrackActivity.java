@@ -88,9 +88,10 @@ int initial;
                         if(device!=null){
                             if(device.getAddress().equals(add)){
                                 int rssi =intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
-                               Toast.makeText(TrackActivity.this,rssi,Toast.LENGTH_SHORT).show();
+                                //Log.e("Here :" , "" + rssi);
+                               Toast.makeText(getBaseContext(),rssi+"",Toast.LENGTH_SHORT).show();
                                 flag=1;
-                                Log.e("Here :" , "" + rssi);
+
                                 if(Math.abs(rssi)>(Math.abs(initial)+thres)){
                                     Toast.makeText(context, rssi+" "+initial+" "+thres, Toast.LENGTH_SHORT).show();
                                     media = MediaPlayer.create(TrackActivity.this, R.raw.alert );
